@@ -1,0 +1,22 @@
+# Arquivos e pastas de dependências
+[Pp]ackages/
+[Nn]uget/
+[Ll]ib/
+
+# Arquivos gerados pela compilação
+[Bb]in/
+[Oo]bj/
+
+# Arquivos do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos do Rider (outra IDE)
+.idea/
+
+# Arquivos de log e cache
+*.[Ll]og
+*.[Cc]ache

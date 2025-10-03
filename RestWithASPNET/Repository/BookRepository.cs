@@ -64,7 +64,7 @@ namespace RestWithASPNET.Repository
         public async Task DeleteAsync(long Id)
         {
             var result = await _context.Books.SingleOrDefaultAsync(b => b.Id == Id);
-            if (result == null) 
+            if (result != null) 
             {
                 _context.Books.Remove(result);
                 await _context.SaveChangesAsync();

@@ -106,3 +106,4 @@ C:\Users\mateu\source\repos\RestWithASPNET\RestWithASPNET\bin\Debug\net8.0\zh-Ha
 C:\Users\mateu\source\repos\RestWithASPNET\RestWithASPNET\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\mateu\source\repos\RestWithASPNET\RestWithASPNET\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\mateu\source\repos\RestWithASPNET\RestWithASPNET\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\mateu\source\repos\RestWithASPNET\RestWithASPNET\obj\Debug\net8.0\RestWithASPNET.sourcelink.json

@@ -1,6 +1,7 @@
 ﻿using RestWithASPNET.Data.Dto.V1;
 using RestWithASPNET.Models;
 using RestWithASPNET.Repository;
+using RestWithASPNET.Mapper;
 
 namespace RestWithASPNET.Services.V1
 {
@@ -19,19 +20,19 @@ namespace RestWithASPNET.Services.V1
         public async Task<List<BookDTO>> FindByAuthorAsync(string author)
         {
             var books = await _repository.FindByAuthorAsync(author);
-            return books.Select(b => MapToDto(b)).ToList();
+            return books.Select(b => BookMapper.MapToDto(b)).ToList();
         }
 
         public async Task<List<BookDTO>> FindByTitleAsync(string title)
         {
             var books = await _repository.FindByTitleAsync(title);
-            return books.Select(b => MapToDto(b)).ToList();
+            return books.Select(b => BookMapper.MapToDto(b)).ToList();
         }
 
         public async Task<List<BookDTO>> FindByLaunchDateAsync(DateTime launchDate)
         {
             var books = await _repository.FindByLaunchDateAsync(launchDate);
-            return books.Select(b => MapToDto(b)).ToList();
+            return books.Select(b => BookMapper.MapToDto(b)).ToList();
         }
 
         public async Task<BookDTO> FindByIdAsync(long id)
@@ -39,14 +40,14 @@ namespace RestWithASPNET.Services.V1
             _logger.LogInformation("Finding one book");
             var entity = await _repository.FindByIdAsync(id);
             if (entity == null) throw new Exception("Book not found");
-            return MapToDto(entity);
+            return BookMapper.MapToDto(entity);
         }
 
         public async Task<List<BookDTO>> FindAllAsync() 
         {
             _logger.LogInformation("Finding all books");
             var books = await _repository.FindAllAsync();
-            return books.Select(b => MapToDto(b)).ToList();
+            return books.Select(b => BookMapper.MapToDto(b)).ToList();
         }
 
         public async Task<BookDTO> CreateAsync(BookDTO bookDto)
@@ -55,10 +56,10 @@ namespace RestWithASPNET.Services.V1
 
             _logger.LogInformation("Creating one book");
 
-            var entity = MapToEntity(bookDto);
+            var entity = BookMapper.MapToEntity(bookDto);
             var createdEntity = await _repository.CreateAsync(entity);
 
-            return MapToDto(createdEntity);
+            return BookMapper.MapToDto(createdEntity);
         }
 
         public async Task<BookDTO> UpdateAsync(BookDTO bookDto)
@@ -77,41 +78,16 @@ namespace RestWithASPNET.Services.V1
 
             var updatedEntity = await _repository.UpdateAsync(entity);
 
-            return MapToDto(updatedEntity);
+            return BookMapper.MapToDto(updatedEntity);
         }
 
         public async Task DeleteAsync(long id)
         {
             _logger.LogInformation("Deleting one book");
             var entity = await _repository.FindByIdAsync(id);
-            if (entity == null) throw new Exception("Book not found");
+            if (entity == null) throw new ArgumentNullException("Book not found");
 
             await _repository.DeleteAsync(id);
-        }
-
-
-
-        private BookDTO MapToDto(Book entity) {
-            return new BookDTO
-            {
-                Id = entity.Id,
-                Author = entity.Author,
-                LaunchDate = entity.LaunchDate,
-                Price = entity.Price,
-                Title = entity.Title
-            };
-        }
-
-        private Book MapToEntity(BookDTO dto) 
-        {
-            return new Book
-            {
-                Id = dto.Id,
-                Author = dto.Author,
-                LaunchDate = dto.LaunchDate,
-                Price = dto.Price,
-                Title = dto.Title
-            };
         }
     }
 }

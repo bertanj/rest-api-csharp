@@ -26,6 +26,7 @@ namespace RestWithASPNET.Controllers
         }
 
         [HttpGet("{id}")]
+        [MapToApiVersion("1")]
         public async Task<ActionResult<BookDTO>> FindByIdAsync(long id)
         { 
             var book = await _bookService.FindByIdAsync(id);
@@ -69,7 +70,7 @@ namespace RestWithASPNET.Controllers
 
             var createdBook = await _bookService.CreateAsync(bookDto);
 
-            return CreatedAtAction(nameof(FindByIdAsync), new { id = createdBook.Id }, createdBook);
+            return CreatedAtAction(nameof(FindByIdAsync), new { version = "1", id = createdBook.Id }, createdBook);
 
         }
 
