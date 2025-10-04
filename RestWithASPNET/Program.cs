@@ -1,6 +1,7 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
+using RestWithASPNET.Mapper;
 using RestWithASPNET.MiddleWare.Handler;
 using RestWithASPNET.Models;
 using RestWithASPNET.Repository;
@@ -34,6 +35,9 @@ builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+// 4. --- CONFIGURAÇÃO DO AUTOMAPPER ---
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
 // Add services to the container.

@@ -1,4 +1,5 @@
-﻿using RestWithASPNET.Data.Dto.V1; 
+﻿using AutoMapper;
+using RestWithASPNET.Data.Dto.V1; 
 using RestWithASPNET.Models;
 using RestWithASPNET.Repository;
 using RestWithASPNET.Mapper;
@@ -9,18 +10,20 @@ namespace RestWithASPNET.Services
     {
         private readonly IPersonRepository _repository;
         private readonly ILogger<PersonService> _logger;
+        private readonly IMapper _mapper;
 
-        public PersonService(IPersonRepository repository, ILogger<PersonService> logger)
+        public PersonService(IPersonRepository repository, ILogger<PersonService> logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<List<PersonDto>> FindAllAsync()
         {
             _logger.LogInformation("Finding all people");
             var persons = await _repository.FindAllAsync();
-            return persons.Select(p => PersonMapper.MapToDto(p)).ToList();
+            return _mapper.Map<List<PersonDto>>(persons);
         }
 
         public async Task<PersonDto> FindByIdAsync(long id)
@@ -28,7 +31,7 @@ namespace RestWithASPNET.Services
             _logger.LogInformation("Finding one person");
             var entity = await _repository.FindByIdAsync(id);
             if (entity == null) throw new ResourceNotFoundException("Person not found");
-            return PersonMapper.MapToDto(entity);
+            return _mapper.Map<PersonDto>(entity);
         }
 
         public async Task<PersonDto> CreateAsync(PersonDto personDto)
@@ -36,10 +39,10 @@ namespace RestWithASPNET.Services
             if (personDto == null) throw new RequiredObjectIsNullException();
             _logger.LogInformation("Creating one person");
 
-            var entity = PersonMapper.MapToEntity(personDto);
+            var entity = _mapper.Map<Person>(personDto);
             var createdEntity = await _repository.CreateAsync(entity);
 
-            return PersonMapper.MapToDto(createdEntity);
+            return _mapper.Map<PersonDto>(createdEntity);
         }
 
         public async Task<PersonDto> UpdateAsync(PersonDto personDto)
@@ -59,7 +62,7 @@ namespace RestWithASPNET.Services
 
             var updatedEntity = await _repository.UpdateAsync(entity);
 
-            return PersonMapper.MapToDto(updatedEntity);
+            return _mapper.Map<PersonDto>(updatedEntity);
         }
 
         public async Task DeleteAsync(long id)
@@ -75,13 +78,13 @@ namespace RestWithASPNET.Services
         public async Task<List<PersonDto>> FindByNameAsync(string firstName, string lastName)
         {
             var persons = await _repository.FindByNameAsync(firstName, lastName);
-            return persons.Select(p => PersonMapper.MapToDto(p)).ToList();
+            return _mapper.Map<List<PersonDto>>(persons);
         }
 
         public async Task<List<PersonDto>> FindByGenderAsync(string gender)
         {
             var persons = await _repository.FindByGenderAsync(gender);
-            return persons.Select(p => PersonMapper.MapToDto(p)).ToList();
+            return _mapper.Map<List<PersonDto>>(persons);
         }
     }
 }
