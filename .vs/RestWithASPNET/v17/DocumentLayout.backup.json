@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|c:\\users\\mateu\\source\\repos\\restwithaspnet\\restwithaspnet\\services\\v1\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|solutionrelative:restwithaspnet\\services\\v1\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|c:\\users\\mateu\\source\\repos\\restwithaspnet\\restwithaspnet\\mapper\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|solutionrelative:restwithaspnet\\mapper\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|c:\\users\\mateu\\source\\repos\\restwithaspnet\\restwithaspnet\\services\\v1\\personservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|solutionrelative:restwithaspnet\\services\\v1\\personservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|c:\\users\\mateu\\source\\repos\\restwithaspnet\\restwithaspnet\\mapper\\personmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|solutionrelative:restwithaspnet\\mapper\\personmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|c:\\users\\mateu\\source\\repos\\restwithaspnet\\restwithaspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96D526A-9AF0-46E4-8836-BFD6195ED163}|RestWithASPNET\\RestWithASPNET.csproj|solutionrelative:restwithaspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookMapper.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Mapper\\BookMapper.cs",
-              "RelativeDocumentMoniker": "RestWithASPNET\\Mapper\\BookMapper.cs",
-              "ToolTip": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Mapper\\BookMapper.cs",
-              "RelativeToolTip": "RestWithASPNET\\Mapper\\BookMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:36:44.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PersonMapper.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Mapper\\PersonMapper.cs",
-              "RelativeDocumentMoniker": "RestWithASPNET\\Mapper\\PersonMapper.cs",
-              "ToolTip": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Mapper\\PersonMapper.cs",
-              "RelativeToolTip": "RestWithASPNET\\Mapper\\PersonMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:35:51.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PersonService.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Services\\V1\\PersonService.cs",
-              "RelativeDocumentMoniker": "RestWithASPNET\\Services\\V1\\PersonService.cs",
-              "ToolTip": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Services\\V1\\PersonService.cs",
-              "RelativeToolTip": "RestWithASPNET\\Services\\V1\\PersonService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:34:12.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Services\\V1\\BookService.cs",
-              "RelativeDocumentMoniker": "RestWithASPNET\\Services\\V1\\BookService.cs",
-              "ToolTip": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Services\\V1\\BookService.cs",
-              "RelativeToolTip": "RestWithASPNET\\Services\\V1\\BookService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAJAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Program.cs",
+              "RelativeDocumentMoniker": "RestWithASPNET\\Program.cs",
+              "ToolTip": "C:\\Users\\mateu\\source\\repos\\RestWithASPNET\\RestWithASPNET\\Program.cs*",
+              "RelativeToolTip": "RestWithASPNET\\Program.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:34:11.6Z",
+              "WhenOpened": "2025-10-04T18:35:42.246Z",
               "EditorCaption": ""
             }
           ]

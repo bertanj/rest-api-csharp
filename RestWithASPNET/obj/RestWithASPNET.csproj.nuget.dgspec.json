@@ -50,9 +50,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.Versioning": {
+            "Asp.Versioning.Mvc.ApiExplorer": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[8.1.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

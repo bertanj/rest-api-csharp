@@ -2,17 +2,11 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "FindAllAsync",
-    "RelativePath": "api/Book/v{version}",
+    "RelativePath": "api/Book/v1",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "version",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[RestWithASPNET.Data.Dto.V1.BookDTO, RestWithASPNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -28,7 +22,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "CreateAsync",
-    "RelativePath": "api/Book/v{version}",
+    "RelativePath": "api/Book/v1",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -36,11 +30,6 @@
       {
         "Name": "bookDto",
         "Type": "RestWithASPNET.Data.Dto.V1.BookDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -59,7 +48,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "UpdateAsync",
-    "RelativePath": "api/Book/v{version}",
+    "RelativePath": "api/Book/v1",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -67,11 +56,6 @@
       {
         "Name": "bookDto",
         "Type": "RestWithASPNET.Data.Dto.V1.BookDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -90,7 +74,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "FindByIdAsync",
-    "RelativePath": "api/Book/v{version}/{id}",
+    "RelativePath": "api/Book/v1/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -98,11 +82,6 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -116,12 +95,13 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "GetBookById"
   },
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "DeleteAsync",
-    "RelativePath": "api/Book/v{version}/{id}",
+    "RelativePath": "api/Book/v1/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -130,11 +110,6 @@
         "Name": "id",
         "Type": "System.Int64",
         "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -142,7 +117,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "FindByAuthorAsync",
-    "RelativePath": "api/Book/v{version}/author/{author}",
+    "RelativePath": "api/Book/v1/author/{author}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -150,11 +125,6 @@
       {
         "Name": "author",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -173,7 +143,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "FindByLaunchDateAsync",
-    "RelativePath": "api/Book/v{version}/launchdate/{launchDate}",
+    "RelativePath": "api/Book/v1/launchdate/{launchDate}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -181,11 +151,6 @@
       {
         "Name": "launchDate",
         "Type": "System.DateTime",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -204,7 +169,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.BookController",
     "Method": "FindByTitleAsync",
-    "RelativePath": "api/Book/v{version}/title/{title}",
+    "RelativePath": "api/Book/v1/title/{title}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -212,11 +177,6 @@
       {
         "Name": "title",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -235,17 +195,11 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.PersonController",
     "Method": "FindAllAsync",
-    "RelativePath": "api/Person/v{version}",
+    "RelativePath": "api/Person/v1",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "version",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[RestWithASPNET.Data.Dto.V1.PersonDto, RestWithASPNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -261,7 +215,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.PersonController",
     "Method": "CreateAsync",
-    "RelativePath": "api/Person/v{version}",
+    "RelativePath": "api/Person/v1",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -269,11 +223,6 @@
       {
         "Name": "personDto",
         "Type": "RestWithASPNET.Data.Dto.V1.PersonDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -292,7 +241,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.PersonController",
     "Method": "UpdateAsync",
-    "RelativePath": "api/Person/v{version}",
+    "RelativePath": "api/Person/v1",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -300,11 +249,6 @@
       {
         "Name": "personDto",
         "Type": "RestWithASPNET.Data.Dto.V1.PersonDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -323,7 +267,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.PersonController",
     "Method": "FindByIdAsync",
-    "RelativePath": "api/Person/v{version}/{id}",
+    "RelativePath": "api/Person/v1/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -331,11 +275,6 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -354,7 +293,7 @@
   {
     "ContainingType": "RestWithASPNET.Controllers.PersonController",
     "Method": "DeleteAsync",
-    "RelativePath": "api/Person/v{version}/{id}",
+    "RelativePath": "api/Person/v1/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -362,11 +301,6 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": true
-      },
-      {
-        "Name": "version",
-        "Type": "",
         "IsRequired": true
       }
     ],

@@ -5,20 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Book/v{version}": {
+    "/api/Book/v1": {
       "get": {
         "tags": [
           "Book"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -55,16 +45,6 @@
       "post": {
         "tags": [
           "Book"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -112,16 +92,6 @@
         "tags": [
           "Book"
         ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -165,11 +135,12 @@
         }
       }
     },
-    "/api/Book/v{version}/{id}": {
+    "/api/Book/v1/{id}": {
       "get": {
         "tags": [
           "Book"
         ],
+        "operationId": "GetBookById",
         "parameters": [
           {
             "name": "id",
@@ -178,14 +149,6 @@
             "schema": {
               "type": "integer",
               "format": "int64"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -225,14 +188,6 @@
               "type": "integer",
               "format": "int64"
             }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -242,7 +197,7 @@
         }
       }
     },
-    "/api/Book/v{version}/author/{author}": {
+    "/api/Book/v1/author/{author}": {
       "get": {
         "tags": [
           "Book"
@@ -255,14 +210,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -298,7 +245,7 @@
         }
       }
     },
-    "/api/Book/v{version}/title/{title}": {
+    "/api/Book/v1/title/{title}": {
       "get": {
         "tags": [
           "Book"
@@ -311,14 +258,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -354,7 +293,7 @@
         }
       }
     },
-    "/api/Book/v{version}/launchdate/{launchDate}": {
+    "/api/Book/v1/launchdate/{launchDate}": {
       "get": {
         "tags": [
           "Book"
@@ -368,14 +307,6 @@
               "type": "string",
               "format": "date-time"
             }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -411,20 +342,10 @@
         }
       }
     },
-    "/api/Person/v{version}": {
+    "/api/Person/v1": {
       "get": {
         "tags": [
           "Person"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -461,16 +382,6 @@
       "post": {
         "tags": [
           "Person"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -518,16 +429,6 @@
         "tags": [
           "Person"
         ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -571,7 +472,7 @@
         }
       }
     },
-    "/api/Person/v{version}/{id}": {
+    "/api/Person/v1/{id}": {
       "get": {
         "tags": [
           "Person"
@@ -584,14 +485,6 @@
             "schema": {
               "type": "integer",
               "format": "int64"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -630,14 +523,6 @@
             "schema": {
               "type": "integer",
               "format": "int64"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],

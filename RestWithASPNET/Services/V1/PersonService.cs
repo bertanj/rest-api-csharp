@@ -2,6 +2,7 @@
 using RestWithASPNET.Models;
 using RestWithASPNET.Repository;
 using RestWithASPNET.Mapper;
+using RestWithASPNET.Exceptions;
 namespace RestWithASPNET.Services
 {
     public class PersonService : IPersonService
@@ -26,13 +27,13 @@ namespace RestWithASPNET.Services
         {
             _logger.LogInformation("Finding one person");
             var entity = await _repository.FindByIdAsync(id);
-            if (entity == null) throw new Exception("Person not found");
+            if (entity == null) throw new ResourceNotFoundException("Person not found");
             return PersonMapper.MapToDto(entity);
         }
 
         public async Task<PersonDto> CreateAsync(PersonDto personDto)
         {
-            if (personDto == null) throw new ArgumentNullException(nameof(personDto));
+            if (personDto == null) throw new RequiredObjectIsNullException();
             _logger.LogInformation("Creating one person");
 
             var entity = PersonMapper.MapToEntity(personDto);
@@ -43,11 +44,11 @@ namespace RestWithASPNET.Services
 
         public async Task<PersonDto> UpdateAsync(PersonDto personDto)
         {
-            if (personDto == null) throw new ArgumentNullException(nameof(personDto));
+            if (personDto == null) throw new RequiredObjectIsNullException();
             _logger.LogInformation("Updating one person");
 
             var entity = await _repository.FindByIdAsync(personDto.Id);
-            if (entity == null) throw new Exception("Person not found");
+            if (entity == null) throw new ResourceNotFoundException("Person not found");
 
             entity.FirstName = personDto.FirstName;
             entity.LastName = personDto.LastName;
@@ -65,7 +66,7 @@ namespace RestWithASPNET.Services
         {
             _logger.LogInformation("Deleting one person");
             var entity = await _repository.FindByIdAsync(id);
-            if (entity == null) throw new Exception("Person not found");
+            if (entity == null) throw new ResourceNotFoundException("Person not found");
 
             await _repository.DeleteAsync(id);
         }

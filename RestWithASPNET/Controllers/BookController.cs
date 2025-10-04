@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using RestWithASPNET.Data.Dto.V1;
 using RestWithASPNET.Services.V1;
 
@@ -25,7 +26,7 @@ namespace RestWithASPNET.Controllers
             return Ok(books);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetBookById")]
         [MapToApiVersion("1")]
         public async Task<ActionResult<BookDTO>> FindByIdAsync(long id)
         { 
@@ -70,7 +71,7 @@ namespace RestWithASPNET.Controllers
 
             var createdBook = await _bookService.CreateAsync(bookDto);
 
-            return CreatedAtAction(nameof(FindByIdAsync), new { version = "1", id = createdBook.Id }, createdBook);
+            return CreatedAtRoute("GetBookId", new { version = "1", id = createdBook.Id }, createdBook);
 
         }
 

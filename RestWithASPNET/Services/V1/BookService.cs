@@ -2,6 +2,7 @@
 using RestWithASPNET.Models;
 using RestWithASPNET.Repository;
 using RestWithASPNET.Mapper;
+using RestWithASPNET.Exceptions;
 
 namespace RestWithASPNET.Services.V1
 {
@@ -39,7 +40,7 @@ namespace RestWithASPNET.Services.V1
         {
             _logger.LogInformation("Finding one book");
             var entity = await _repository.FindByIdAsync(id);
-            if (entity == null) throw new Exception("Book not found");
+            if (entity == null) throw new ResourceNotFoundException("Book not found");
             return BookMapper.MapToDto(entity);
         }
 
@@ -52,7 +53,7 @@ namespace RestWithASPNET.Services.V1
 
         public async Task<BookDTO> CreateAsync(BookDTO bookDto)
         {
-            if (bookDto == null) throw new ArgumentNullException(nameof(bookDto));
+            if (bookDto == null) throw new RequiredObjectIsNullException();
 
             _logger.LogInformation("Creating one book");
 
@@ -64,12 +65,12 @@ namespace RestWithASPNET.Services.V1
 
         public async Task<BookDTO> UpdateAsync(BookDTO bookDto)
         { 
-            if (bookDto == null) throw new ArgumentNullException(nameof(bookDto));
+            if (bookDto == null) throw new RequiredObjectIsNullException();
             
            _logger.LogInformation("Updating one book");
 
             var entity = await _repository.FindByIdAsync(bookDto.Id);
-            if (entity == null) throw new Exception("Book not found");
+            if (entity == null) throw new ResourceNotFoundException("Book not found");
             
             entity.Author = bookDto.Author;
             entity.LaunchDate = bookDto.LaunchDate;
@@ -85,7 +86,7 @@ namespace RestWithASPNET.Services.V1
         {
             _logger.LogInformation("Deleting one book");
             var entity = await _repository.FindByIdAsync(id);
-            if (entity == null) throw new ArgumentNullException("Book not found");
+            if (entity == null) throw new ResourceNotFoundException("Book not found");
 
             await _repository.DeleteAsync(id);
         }
